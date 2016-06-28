@@ -1,5 +1,7 @@
 Search feature test
 =====================
+Tags: search
+
 Created by yddu on 6/20/16
 
 This page is testing search product in Amazon

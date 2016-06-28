@@ -9,4 +9,3 @@ Tags: login
 * Input username and password
 * Welcome words showed on page
 * Log out
-
