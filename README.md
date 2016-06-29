@@ -9,6 +9,7 @@
 ##Report Plugin
 - gauge --install html-report
 
+##Plugin update
 - gauge —check-updates
 - gauge —update html-report
 
