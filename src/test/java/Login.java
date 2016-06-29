@@ -42,7 +42,8 @@ public class Login {
         Actions builder = new Actions(driver);
         WebElement submenu = driver.findElement(By.id("nav-link-yourAccount"));
         builder.moveToElement(submenu).perform();
-        driver.findElement(By.id("nav-item-signout")).click();
+//        driver.findElement(By.id("nav-item-signout")).click();
+        driver.findElement(By.cssSelector("#nav-item-signout span")).click();
         driver.close();
     }
 
