@@ -23,7 +23,7 @@ Search bose headphone
 Tags: bose
 
 * Search "bose soundsport"
-* Can find "Bose SoundSport 无线耳机-黑色" in result page
+* Can find "Bose SoundSport 耳塞式运动耳机-Audio灰白" in result page
 
 ____________________
 These are teardown steps

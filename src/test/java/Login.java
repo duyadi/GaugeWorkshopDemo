@@ -2,6 +2,7 @@
  * Created by yddu on 6/17/16.
  */
 
+import com.thoughtworks.gauge.Gauge;
 import com.thoughtworks.gauge.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,6 +31,7 @@ public class Login {
 
     @Step("Welcome words showed on page")
     public void welcomeWord() {
+        Gauge.writeMessage("确认登陆成功");
         WebElement word = driver.findElement(By.xpath("//*[@id=\"nav-link-yourAccount\"]/span[1]"));
         String sring = word.getText();
         Assert.assertEquals("您好, Yadi", sring);
@@ -41,7 +43,6 @@ public class Login {
         WebElement submenu = driver.findElement(By.id("nav-link-yourAccount"));
         builder.moveToElement(submenu).perform();
         driver.findElement(By.id("nav-item-signout")).click();
-//        driver.quit();
         driver.close();
     }
 
