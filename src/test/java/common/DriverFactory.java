@@ -1,18 +1,16 @@
-import com.thoughtworks.gauge.Step;
-import org.junit.Assert;
-import org.openqa.selenium.By;
+package common;
+
+import com.thoughtworks.gauge.AfterScenario;
+import com.thoughtworks.gauge.BeforeScenario;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-/**
- * Created by yddu on 6/20/16.
- */
 public class DriverFactory {
-    private static WebDriver driver;
+    public static WebDriver driver;
 
-    public static final WebDriver getDriver() {
+    @BeforeScenario
+    public static WebDriver getDriver() {
         if (driver == null) {
             driver = new ChromeDriver();
         }
@@ -23,5 +21,11 @@ public class DriverFactory {
         }
 
         return driver;
+    }
+
+    @AfterScenario
+    public void closeDriver(){
+        driver.close();
+        driver.quit();
     }
 }

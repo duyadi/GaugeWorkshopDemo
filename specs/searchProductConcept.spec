@@ -1,8 +1,7 @@
 Search feature test concept
 =====================
-Created by yddu on 6/20/16
 
-This page is testing search product in Amazon
+This page is testing search product in Amazon which use concept
 
 * Login to Amazon as "yadidu813@gmail.com" and "YD123456"
 
@@ -19,7 +18,7 @@ Search bose headphone
 Tags: bosec
 
 * Search "bose soundsport"
-* Can find "Bose SoundSport 耳塞式运动耳机-Audio灰白" in result page
+* Can find "Bose SoundSport 无线耳机-水蓝色" in result page
 
 ____________________
 These are teardown steps

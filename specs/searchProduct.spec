@@ -2,8 +2,6 @@ Search feature test
 =====================
 Tags: search
 
-Created by yddu on 6/20/16
-
 This page is testing search product in Amazon
 
 * Open Amazon homepage
@@ -23,7 +21,7 @@ Search bose headphone
 Tags: bose
 
 * Search "bose soundsport"
-* Can find "Bose SoundSport 耳塞式运动耳机-Audio灰白" in result page
+* Can find "Bose SoundSport 无线耳机-水蓝色" in result page
 
 ____________________
 These are teardown steps

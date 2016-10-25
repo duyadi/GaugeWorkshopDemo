@@ -1,14 +1,13 @@
-import com.thoughtworks.gauge.Gauge;
+package steps;
+
+import com.thoughtworks.gauge.Step;
+import common.DriverFactory;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
-import com.thoughtworks.gauge.Step;
+import org.openqa.selenium.WebElement;
 
-/**
- * Created by yddu on 6/20/16.
- */
+
 public class SearchProduct {
     WebDriver driver = DriverFactory.getDriver();
 

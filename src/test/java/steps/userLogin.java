@@ -1,50 +1,45 @@
-/**
- * Created by yddu on 6/17/16.
- */
+package steps;
 
 import com.thoughtworks.gauge.Gauge;
 import com.thoughtworks.gauge.Step;
+import common.DriverFactory;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.junit.Assert;
+import org.openqa.selenium.support.PageFactory;
+import pages.HomePage;
+import pages.LoginPage;
 
-public class Login {
+
+
+public class UserLogin {
     WebDriver driver = DriverFactory.getDriver();
+    private HomePage homePage = PageFactory.initElements(driver,HomePage.class);
+    private  LoginPage loginPage = PageFactory.initElements(driver,LoginPage.class);
 
     @Step("Open Amazon homepage")
     public void navigationHomepage() {
-        driver.get("https://www.amazon.cn/");
+        driver.get(HomePage.Url);
+        driver.manage().window().maximize();
     }
 
     @Step("Input username and password")
     public void loginAmazon() {
-        driver.findElement(By.id("nav-link-yourAccount")).click();
-        WebElement userName = driver.findElement(By.id("ap_email"));
-        userName.sendKeys("yadidu813@gmail.com");
-        WebElement passWord = driver.findElement(By.id("ap_password"));
-        passWord.sendKeys("YD123456");
-        driver.findElement(By.id("signInSubmit")).click();
+        homePage.clickLogin();
+        loginPage.inputCredentials();
     }
 
     @Step("Welcome words showed on page")
     public void welcomeWord() {
         Gauge.writeMessage("确认登陆成功");
-        WebElement word = driver.findElement(By.xpath("//*[@id=\"nav-link-yourAccount\"]/span[1]"));
-        String sring = word.getText();
-        Assert.assertEquals("您好, Yadi", sring);
+        Assert.assertEquals("您好, Qa", homePage.userNameIsDisplayed());
     }
 
     @Step("Log out")
     public void logOut() {
-        Actions builder = new Actions(driver);
-        WebElement submenu = driver.findElement(By.id("nav-link-yourAccount"));
-        builder.moveToElement(submenu).perform();
-//        driver.findElement(By.id("nav-item-signout")).click();
-        driver.findElement(By.cssSelector("#nav-item-signout span")).click();
-        driver.close();
+        homePage.clickLogoutLink();
     }
 
     @Step("Input <username> and <password>")
