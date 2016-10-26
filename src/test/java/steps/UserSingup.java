@@ -13,6 +13,7 @@ import java.util.List;
 
 import static common.DriverFactory.driver;
 
+
 public class UserSingup {
     private HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     private LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
@@ -25,11 +26,11 @@ public class UserSingup {
             homePage.clickLogoutLink();
             loginPage.clickCreateAccountButton();
             signupPage.chooseEmailWay();
-            signupPage.inputAccountInfo(row.getCell(String.valueOf(0)), row.getCell(String.valueOf(1)), row.getCell(String.valueOf(2)));
+            signupPage.inputAccountInfo(row.getCell("name"),row.getCell("email"),row.getCell("password"));
+            signupPage.legalAgreement();
             signupPage.clickSignUpButton();
-
+            homePage.clickLogoutLink();
         }
-
     }
 
     @Step("Jump to sign up page")
@@ -73,4 +74,6 @@ public class UserSingup {
     public void signupSuccess() {
         Assert.assertTrue(Boolean.parseBoolean(homePage.userNameIsDisplayed()));
     }
+
+
 }

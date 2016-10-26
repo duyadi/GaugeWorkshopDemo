@@ -1,5 +1,6 @@
 package pages;
 
+import com.thoughtworks.gauge.TableRow;
 import common.DriverFactory;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,9 +23,6 @@ public class SignupPage {
     @FindBy(name = "legalAgreementCheckBox")
     private WebElement legalAgreementCheckBox;
 
-    @FindBy(id = "continue")
-    private WebElement signUpButton;
-
     @FindBy(id = "ap_register_form")
     private WebElement signUpForm;
 
@@ -32,7 +30,7 @@ public class SignupPage {
         mailWay.click();
     }
 
-    public void inputAccountInfo(String Name,String mailBox,String password){
+    public void inputAccountInfo(String Name, String mailBox, String password){
         accountName.sendKeys(Name);
         accountEmail.sendKeys(mailBox);
         accountPw.sendKeys(password);
