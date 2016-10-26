@@ -1,14 +1,9 @@
 package steps;
 
-import com.gargoylesoftware.htmlunit.Page;
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
-import common.DriverFactory;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import pages.HomePage;
 import pages.LoginPage;
@@ -71,9 +66,7 @@ public class UserSingup {
 
     @Step("Click sign up button")
     public void clickSignup() {
-//        signupPage.clickSignUpButton();
-        ((JavascriptExecutor)driver).executeScript("$('#continue').click()");
-
+        signupPage.clickSignUpButton();
     }
 
     @Step("Sign up successfully")

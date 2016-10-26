@@ -25,6 +25,9 @@ public class SignupPage {
     @FindBy(id = "continue")
     private WebElement signUpButton;
 
+    @FindBy(id = "ap_register_form")
+    private WebElement signUpForm;
+
     public void chooseEmailWay(){
         mailWay.click();
     }
@@ -37,7 +40,7 @@ public class SignupPage {
     }
 
     public void clickSignUpButton(){
-        signUpButton.click();
+        signUpForm.submit();
 
     }
 
