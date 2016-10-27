@@ -1,13 +1,16 @@
 Test Register function in Amazon
 =========================
+Tags:Register
+
 This page is testing singup Amazon
+
+table: src/test/registerdata.csv
 
 * Open Amazon homepage
 * Input username and password
 * Welcome words showed on page
 
-
-Register a Amazon account
+Register an Amazon account
 ----------------
 Tags: Registerone
 
@@ -22,7 +25,7 @@ Tags: Registerone
 * Sign up successfully
 
 
-Register a Amazon account with multiple accounts
+Register an Amazon account with multiple accounts
 ----------------
 Tags:Registermultiple
 
@@ -35,3 +38,18 @@ Tags:Registermultiple
   |QA3      |Faya103@yahoo.com       |qa123456    |
 
 
+
+
+Register multiple Amazon accounts via data file
+-----------------------
+Tags:datatable
+
+* Log out
+* Jump to sign up page
+* Choose email way
+* Input account name <name>
+* Input account email <email>
+* Input account password <password>
+* Agree with the legal
+* Click sign up button
+* Sign up successfully

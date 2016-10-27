@@ -55,8 +55,8 @@ public class HomePage extends BasePage {
         registerLink.click();
     }
 
-    public String userNameIsDisplayed() {
-        return (userName.getText());
+    public boolean userNameIsDisplayed() {
+        return logoutLink.isDisplayed();
     }
 
 }

@@ -26,6 +26,12 @@ public class LoginPage {
         loginButton.click();
     }
 
+    public void loginAccountInfo(String name,String password){
+        userName.sendKeys(name);
+        userPw.sendKeys(password);
+        loginButton.click();
+    }
+
     public void clickHomePageLink() {
         homePageLink.click();
     }
