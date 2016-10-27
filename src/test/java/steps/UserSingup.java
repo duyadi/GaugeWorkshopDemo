@@ -4,6 +4,7 @@ import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
 import common.DriverFactory;
+import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
 import pages.HomePage;
 import pages.LoginPage;
@@ -82,7 +83,8 @@ public class UserSingup {
 
     @Step("Sign up successfully")
     public void signupSuccess() {
-        assertTrue(homePage.userNameIsDisplayed());
+        String string = homePage.userNameIsDisplayed();
+        Assert.assertTrue(string.contains("您好"));
     }
 
 

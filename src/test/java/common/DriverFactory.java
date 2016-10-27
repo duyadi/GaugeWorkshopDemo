@@ -1,7 +1,9 @@
 package common;
 
 import com.thoughtworks.gauge.AfterScenario;
+import com.thoughtworks.gauge.AfterSpec;
 import com.thoughtworks.gauge.BeforeScenario;
+import com.thoughtworks.gauge.BeforeSpec;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class DriverFactory {
     public static WebDriver driver;
 
-    @BeforeScenario
+    @BeforeSpec
     public static WebDriver getDriver() {
         if (driver == null) {
             driver = new ChromeDriver();
@@ -23,9 +25,8 @@ public class DriverFactory {
         return driver;
     }
 
-    @AfterScenario
+    @AfterSpec
     public void closeDriver(){
-        driver.close();
         driver.quit();
     }
 }
