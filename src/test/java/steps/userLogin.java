@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import pages.HomePage;
 import pages.LoginPage;
 
+import static org.junit.Assert.assertTrue;
 
 
 public class UserLogin {
@@ -33,7 +34,8 @@ public class UserLogin {
     @Step("Welcome words showed on page")
     public void welcomeWord() {
         Gauge.writeMessage("确认登陆成功");
-        Assert.assertEquals("您好, Qa", homePage.userNameIsDisplayed());
+        String string = homePage.userNameIsDisplayed();
+        Assert.assertTrue(string.contains("您好"));
     }
 
     @Step("Log out")
@@ -43,11 +45,7 @@ public class UserLogin {
 
     @Step("Input <username> and <password>")
     public void loginConcept(String username, String password) {
-        driver.findElement(By.id("nav-link-yourAccount")).click();
-        WebElement userName = driver.findElement(By.id("ap_email"));
-        userName.sendKeys(username);
-        WebElement passWord = driver.findElement(By.id("ap_password"));
-        passWord.sendKeys(password);
-        driver.findElement(By.id("signInSubmit")).click();
+        homePage.clickLogin();
+        loginPage.loginAccountInfo(username,password);
     }
 }

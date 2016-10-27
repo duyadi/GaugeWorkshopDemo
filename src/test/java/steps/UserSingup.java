@@ -73,7 +73,6 @@ public class UserSingup {
     @Step("Agree with the legal")
     public void legalAgree() {
         signupPage.legalAgreement();
-
     }
 
     @Step("Click sign up button")
