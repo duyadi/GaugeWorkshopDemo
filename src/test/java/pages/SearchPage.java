@@ -13,8 +13,8 @@ public class SearchPage {
     @FindBy(className = "nav-input")
     private WebElement searchButton;
 
-    @FindBy(id = "result_0")
-    private WebElement firstResult;
+    @FindBy(id = "result_1")
+    private WebElement secondResult;
 
 
     public void searchPro(String prod){
@@ -23,6 +23,6 @@ public class SearchPage {
     }
 
     public String searchFirstResult(String result){
-        return firstResult.getText();
+        return secondResult.getText();
     }
 }
